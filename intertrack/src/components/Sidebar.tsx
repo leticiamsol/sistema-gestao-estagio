@@ -1,3 +1,4 @@
+import React from 'react';
 import {Link} from 'react-router-dom';
 
 function Sidebar()
@@ -11,31 +12,48 @@ function Sidebar()
                         
                         <ul className="metismenu list-unstyled" id="side-menu">
 
-                            <li><Link to="/">Home</Link></li>
+                            <li style={{visibility : 'hidden'}}><Link to="/">Home</Link></li>
 
                             <li>
-                                <a href="index.html" className="waves-effect">
+                                <Link to="/" className="waves-effect">
                                     <i className="ri-dashboard-line"></i><span className="badge rounded-pill bg-success float-end">3</span>
-                                    <span>Dashboard</span>
-                                </a>
+                                    <span>Home</span>
+                                </Link>
                             </li>
 
                             <li>
-                                <a href="calendar.html" className=" waves-effect">
+                                <Link to="/cursos"  className=" waves-effect">
                                     <i className="ri-calendar-2-line"></i>
-                                    <span>Calendar</span>
-                                </a>
+                                    <span>Cursos</span>
+                                </Link>
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);" className="has-arrow waves-effect">
+                                <Link to="/alunos"  className=" waves-effect">
+                                    <i className="ri-calendar-2-line"></i>
+                                    <span>Alunos</span>
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/empresas"className="has-arrow waves-effect">
                                     <i className="ri-mail-send-line"></i>
-                                    <span>Email</span>
-                                </a>
-                                <ul className="sub-menu" aria-expanded="false">
-                                    <li><a href="email-inbox.html">Inbox</a></li>
-                                    <li><a href="email-read.html">Read Email</a></li>
-                                </ul>
+                                    <span>Empresas</span>
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/estagio" className="has-arrow waves-effect">
+                                    <i className="ri-mail-send-line"></i>
+                                    <span>Estágio</span>
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/calendario" className="has-arrow waves-effect">
+                                    <i className="ri-mail-send-line"></i>
+                                    <span>Calendário</span>
+                                </Link>
                             </li>
 
                         </ul>
