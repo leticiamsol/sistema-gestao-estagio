@@ -43,6 +43,13 @@ function Sidebar()
                             </li>
 
                             <li>
+                                <Link to="/contratos"className="has-arrow waves-effect">
+                                    <i className="ri-mail-send-line"></i>
+                                    <span>Contratos</span>
+                                </Link>
+                            </li>
+
+                            <li>
                                 <Link to="/estagio" className="has-arrow waves-effect">
                                     <i className="ri-mail-send-line"></i>
                                     <span>Estágio</span>

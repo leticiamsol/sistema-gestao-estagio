@@ -1,4 +1,9 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faChalkboardUser } from '@fortawesome/free-solid-svg-icons';
+
 
 function Home() 
 {
@@ -29,11 +34,11 @@ function Home()
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
                                             
-                                            <p className="text-muted mb-0"><span className="text-success fw-bold font-size-12 me-2"><i className="ri-arrow-right-up-line me-1 align-middle"></i>9.23%</span>from previous period</p>
+                                            <p className="text-muted mb-0"><span className="text-success fw-bold font-size-12 me-2"><i className="ri-arrow-right-up-line me-1 align-middle"></i>9.23%</span>better</p>
                                         </div>
                                         <div className="avatar-sm">
                                             <span className="avatar-title bg-light text-primary rounded-3">
-                                                <i className="ri-shopping-cart-2-line font-size-24"></i>  
+                                                <FontAwesomeIcon icon={faGraduationCap} style={{ color: '#B5121B', fontSize: '22px' }}/>
                                             </span>
                                         </div>
                                     </div>                                            
@@ -51,11 +56,11 @@ function Home()
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
                                             
-                                            <p className="text-muted mb-0"><span className="text-danger fw-bold font-size-12 me-2"><i className="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>from previous period</p>
+                                            <p className="text-muted mb-0"><span className="text-danger fw-bold font-size-12 me-2"><i className="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>worse</p>
                                         </div>
                                         <div className="avatar-sm">
                                             <span className="avatar-title bg-light text-success rounded-3">
-                                                <i className="mdi mdi-currency-usd font-size-24"></i>  
+                                                <FontAwesomeIcon icon={faBuilding} style={{ color: '#B5121B', fontSize: '22px' }} />
                                             </span>
                                         </div>
                                     </div>                                              
@@ -73,12 +78,12 @@ function Home()
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
 
-                                            <p className="text-muted mb-0"><span className="text-success fw-bold font-size-12 me-2"><i className="ri-arrow-right-up-line me-1 align-middle"></i>16.2%</span>from previous period</p>
+                                            <p className="text-muted mb-0"><span className="text-success fw-bold font-size-12 me-2"><i className="ri-arrow-right-up-line me-1 align-middle"></i>16.2%</span>better</p>
                                             
                                         </div>
                                         <div className="avatar-sm">
                                             <span className="avatar-title bg-light text-primary rounded-3">
-                                                <i className="ri-user-3-line font-size-24"></i>  
+                                            <FontAwesomeIcon icon={faChalkboardUser} style={{ color: '#B5121B', fontSize: '22px' }}/>
                                             </span>
                                         </div>
                                     </div>                                              

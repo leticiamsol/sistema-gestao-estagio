@@ -3,7 +3,7 @@
     import Header from './components/Header';
     import Sidebar from './components/Sidebar';
     import Home from './pages/Home';
-    import Cursos from './pages/Cursos';
+    import Cursos from './pages/cursos/Cursos';
     import Alunos from './pages/Alunos';
     import Empresas from './pages/Empresas';
     import Estagio from './pages/Estagio';
