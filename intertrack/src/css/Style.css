@@ -1,14 +1,29 @@
 
-.waves-effect span {
-    color: white;
-}
+    .waves-effect span {
+        color: white;
+    }
 
-.table-container {
-    border-collapse: collapse; 
-    border-spacing: 0; 
-    width: 100%;
-}
+    .table-container {
+        border-collapse: collapse; 
+        border-spacing: 0; 
+        width: 100%;
+    }
 
-.card-body {
-    overflow-x: auto;
-}
+    .card-body {
+        overflow-x: auto;
+    }
+
+    .mb-sm-0 {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 10px 0 20px !important;
+    }
+
+    .curso-link {
+        text-decoration: underline !important;
+    }
+
+    .custom-calendar {
+        background-color: #f0f0f0; 
+    }

@@ -9,40 +9,36 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 type CursoData = {
-  curso_id: number;
+  estudante_id: number;
   nome: string;
-  area: string;
-  ano_criacao: number;
-  qt_alunos: number;
+  curso_id: string;
+  ano_inscricao: number;
 };
 
 const columns: TableColumn<CursoData>[] = [
   {
     name: "ID",
-    selector: (row) => row.curso_id, 
+    selector: (row) => row.estudante_id, 
     maxWidth: "150px",
   },
   {
-    name: "Nome",
+    name: "Nome do Estudante",
     selector: (row) => row.nome,
     minWidth: "350px",
   },
   {
-    name: "Área",
-    selector: (row) => row.area,
+    name: "Curso",
+    selector: (row) => row.curso_id,
   },
   {
-    name: "Ano de Criação",
-    selector: (row) => row.ano_criacao,
+    name: "Ano de Inscrição",
+    selector: (row) => row.ano_inscricao,
   },
-  {
-    name: "Número de Alunos",
-    selector: (row) => row.qt_alunos,
-  },
+
     {
     name: "Detalhes",
     cell: (row) => (
-      <Link to={`/detalhes-curso`}>
+      <Link to={`/detalhes-estudante-licenciatura`}>
         <FontAwesomeIcon icon={faEdit} style={{ color: '#897272', fontSize: '16px', cursor: 'pointer' }}/>
       </Link>
     ),
@@ -57,7 +53,7 @@ const btnAdd = {
 }
 
 
-function Curso() {
+function Licenciatura() {
   return (
     
     <div className="main-content">
@@ -67,13 +63,13 @@ function Curso() {
           <div className="row">
               <div className="col-12">
                   <div className="page-title-box d-sm-flex align-items-center justify-content-between">
-                      <h4 className="mb-sm-0">Cursos</h4>
+                      <h4 className="mb-sm-0">Estudantes de Licenciatura</h4>
 
                       <div>
-                        <Link to="/criar-curso">
+                        <Link to="/registar-estudante-licenciatura">
                           <button className="btn btn-danger" style={btnAdd}>
                              <FontAwesomeIcon icon={faPlus} style={{ color: '#fff', fontSize: '16px' }}/>
-                             Registar Curso
+                             Registar Estudante
                           </button>
                         </Link>
                       </div>
@@ -84,7 +80,7 @@ function Curso() {
 
           <div className="App">
             <Card>
-              <DataTable<CursoData>
+              <DataTable<CursoData> 
                 // title="Lista de Cursos"
                 columns={columns}
                 data={Lista as CursoData[]}
@@ -101,4 +97,4 @@ function Curso() {
   );
 }
 
-export default Curso;
+export default Licenciatura;

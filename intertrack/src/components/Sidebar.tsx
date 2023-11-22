@@ -1,5 +1,21 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faHouse,
+    faGraduationCap, 
+    faUser, 
+    faBuilding, 
+    faFileContract,
+    faBriefcase, 
+    faCalendarAlt, 
+} from '@fortawesome/free-solid-svg-icons';
+
+
+const wavesEffectStyle = {
+    display: 'flex',
+    gap: '10px',
+};
 
 function Sidebar()
 {
@@ -15,50 +31,50 @@ function Sidebar()
                             <li style={{visibility : 'hidden'}}><Link to="/">Home</Link></li>
 
                             <li>
-                                <Link to="/" className="waves-effect">
-                                    <i className="ri-dashboard-line"></i><span className="badge rounded-pill bg-success float-end">3</span>
+                                <Link to="/" className="waves-effect" style={wavesEffectStyle}>
+                                    <FontAwesomeIcon icon={faHouse} style={{ color: '#fff', fontSize: '16px' }}/> 
                                     <span>Home</span>
                                 </Link>
                             </li>
 
                             <li>
-                                <Link to="/cursos"  className=" waves-effect">
-                                    <i className="ri-calendar-2-line"></i>
+                                <Link to="/cursos"  className=" waves-effect" style={wavesEffectStyle}>
+                                    <FontAwesomeIcon icon={faGraduationCap} style={{ color: '#fff', fontSize: '16px' }}/> 
                                     <span>Cursos</span>
                                 </Link>
                             </li>
 
                             <li>
-                                <Link to="/alunos"  className=" waves-effect">
-                                    <i className="ri-calendar-2-line"></i>
-                                    <span>Alunos</span>
+                                <Link to="/estudantes"  className="waves-effect" style={wavesEffectStyle}>
+                                    <FontAwesomeIcon icon={faUser} style={{ color: '#fff', fontSize: '16px' }}/> 
+                                    <span>Estudantes</span>
                                 </Link>
                             </li>
 
                             <li>
-                                <Link to="/empresas"className="has-arrow waves-effect">
-                                    <i className="ri-mail-send-line"></i>
+                                <Link to="/empresas"  className="waves-effect" style={wavesEffectStyle}>
+                                    <FontAwesomeIcon icon={faBuilding} style={{ color: '#fff', fontSize: '16px' }}/> 
                                     <span>Empresas</span>
                                 </Link>
                             </li>
 
                             <li>
-                                <Link to="/contratos"className="has-arrow waves-effect">
-                                    <i className="ri-mail-send-line"></i>
-                                    <span>Contratos</span>
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link to="/estagio" className="has-arrow waves-effect">
-                                    <i className="ri-mail-send-line"></i>
+                                <Link to="/estagio" className="waves-effect" style={wavesEffectStyle}>
+                                    <FontAwesomeIcon icon={faBriefcase} style={{ color: '#fff', fontSize: '16px' }}/> 
                                     <span>Estágio</span>
                                 </Link>
                             </li>
 
                             <li>
-                                <Link to="/calendario" className="has-arrow waves-effect">
-                                    <i className="ri-mail-send-line"></i>
+                                <Link to="/contratos" className="waves-effect" style={wavesEffectStyle}>
+                                    <FontAwesomeIcon icon={faFileContract} style={{ color: '#fff', fontSize: '16px' }}/> 
+                                    <span>Contratos</span>
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/calendario" className="waves-effect" style={wavesEffectStyle}>
+                                    <FontAwesomeIcon icon={faCalendarAlt} style={{ color: '#fff', fontSize: '16px' }}/> 
                                     <span>Calendário</span>
                                 </Link>
                             </li>

@@ -1,6 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
-function Alunos() 
+const btnAdd = {
+    fontWeight: 600,
+    display: 'flex',
+    alignItems: 'center',
+    gap: 5,
+}
+
+function Estudantes() 
 {
     return (
         <div className="main-content">
@@ -10,7 +20,7 @@ function Alunos()
                     <div className="row">
                         <div className="col-12">
                             <div className="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 className="mb-sm-0">Alunos</h4>
+                                <h4 className="mb-sm-0">Estudantes</h4>
 
                             </div>
                         </div>
@@ -27,15 +37,16 @@ function Alunos()
 
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
-                                            <p style={{ visibility : 'hidden' }}>sdcsdc</p>
                                             
-                                            <p className="text-muted mb-0"><span className="text-success fw-bold font-size-12 me-2"><i className="ri-arrow-right-up-line me-1 align-middle"></i>9.23%</span>from previous period</p>
+                                            <Link to={"/estudantes-ctesp"}>
+                                                <button className='btn btn-danger' style={btnAdd}>Ver Detalhes</button>
+                                            </Link>
                                         </div>
                                         <div className="avatar-sm">
                                             <span className="avatar-title bg-light text-primary rounded-3">
-                                                <i className="ri-shopping-cart-2-line font-size-24"></i>  
+                                                <FontAwesomeIcon icon={faGraduationCap} style={{ color: '#B5121B', fontSize: '20px' }}/>  
                                             </span>
-                                        </div>
+                                        </div> 
                                     </div>                                            
                                 </div>
                             </div>
@@ -52,13 +63,14 @@ function Alunos()
 
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
-                                            <p style={{ visibility : 'hidden' }}>sdcsdc</p>
                                             
-                                            <p className="text-muted mb-0"><span className="text-danger fw-bold font-size-12 me-2"><i className="ri-arrow-right-down-line me-1 align-middle"></i>1.09%</span>from previous period</p>
+                                            <Link to={"/estudantes-licenciatura"}>
+                                                <button className='btn btn-danger' style={btnAdd}>Ver Detalhes</button>
+                                            </Link>
                                         </div>
                                         <div className="avatar-sm">
                                             <span className="avatar-title bg-light text-success rounded-3">
-                                                <i className="mdi mdi-currency-usd font-size-24"></i>  
+                                                <FontAwesomeIcon icon={faGraduationCap} style={{ color: '#B5121B', fontSize: '20px' }}/> 
                                             </span>
                                         </div>
                                     </div>                                              
@@ -75,14 +87,15 @@ function Alunos()
 
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
-                                            <p style={{ visibility : 'hidden' }}>sdcsdc</p>
 
-                                            <p className="text-muted mb-0"><span className="text-success fw-bold font-size-12 me-2"><i className="ri-arrow-right-up-line me-1 align-middle"></i>16.2%</span>from previous period</p>
+                                            <Link to={"/estudantes-mestrado"}>
+                                                <button className='btn btn-danger' style={btnAdd}>Ver Detalhes</button>
+                                            </Link>
                                             
                                         </div>
                                         <div className="avatar-sm">
                                             <span className="avatar-title bg-light text-primary rounded-3">
-                                                <i className="ri-user-3-line font-size-24"></i>  
+                                                <FontAwesomeIcon icon={faGraduationCap} style={{ color: '#B5121B', fontSize: '20px' }}/> 
                                             </span>
                                         </div>
                                     </div>                                              
@@ -100,14 +113,15 @@ function Alunos()
 
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
                                             <p style={{ visibility : 'hidden' }}>sdcsdc</p>
-                                            <p style={{ visibility : 'hidden' }}>sdcsdc</p>
 
-                                            <p className="text-muted mb-0"><span className="text-success fw-bold font-size-12 me-2"><i className="ri-arrow-right-up-line me-1 align-middle"></i>16.2%</span>from previous period</p>
+                                            <Link to={"/estudantes-outras_formacoes"}>
+                                                <button className='btn btn-danger' style={btnAdd}>Ver Detalhes</button>
+                                            </Link>
                                             
                                         </div>
                                         <div className="avatar-sm">
                                             <span className="avatar-title bg-light text-primary rounded-3">
-                                                <i className="ri-user-3-line font-size-24"></i>  
+                                                <FontAwesomeIcon icon={faGraduationCap} style={{ color: '#B5121B', fontSize: '20px' }}/>  
                                             </span>
                                         </div>
                                     </div>                                              
@@ -123,4 +137,4 @@ function Alunos()
     )
 }
 
-export default Alunos;
+export default Estudantes;

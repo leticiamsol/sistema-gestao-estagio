@@ -9,40 +9,44 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 type CursoData = {
-  curso_id: number;
-  nome: string;
-  area: string;
-  ano_criacao: number;
-  qt_alunos: number;
+  estagio_id: number;
+  estudante_id: string;
+  horas: number;
+  data_inicio: string;
+  data_fim: string;
+  nota: number;
 };
 
 const columns: TableColumn<CursoData>[] = [
   {
     name: "ID",
-    selector: (row) => row.curso_id, 
+    selector: (row) => row.estagio_id, 
     maxWidth: "150px",
   },
   {
-    name: "Nome",
-    selector: (row) => row.nome,
-    minWidth: "350px",
+    name: "Estudante",
+    selector: (row) => row.estudante_id,
   },
   {
-    name: "Área",
-    selector: (row) => row.area,
+    name: "Horas",
+    selector: (row) => row.horas,
   },
   {
-    name: "Ano de Criação",
-    selector: (row) => row.ano_criacao,
+    name: "Data de Início",
+    selector: (row) => row.data_inicio,
+  },
+  {
+    name: "Data de Fim",
+    selector: (row) => row.data_fim,
   },
   {
     name: "Número de Alunos",
-    selector: (row) => row.qt_alunos,
+    selector: (row) => row.nota,
   },
     {
     name: "Detalhes",
     cell: (row) => (
-      <Link to={`/detalhes-curso`}>
+      <Link to={`/detalhes-estagio`}>
         <FontAwesomeIcon icon={faEdit} style={{ color: '#897272', fontSize: '16px', cursor: 'pointer' }}/>
       </Link>
     ),
@@ -57,7 +61,7 @@ const btnAdd = {
 }
 
 
-function Curso() {
+function Estagio() {
   return (
     
     <div className="main-content">
@@ -67,13 +71,13 @@ function Curso() {
           <div className="row">
               <div className="col-12">
                   <div className="page-title-box d-sm-flex align-items-center justify-content-between">
-                      <h4 className="mb-sm-0">Cursos</h4>
+                      <h4 className="mb-sm-0">Estágios</h4>
 
                       <div>
-                        <Link to="/criar-curso">
+                        <Link to="/registar-estagio">
                           <button className="btn btn-danger" style={btnAdd}>
                              <FontAwesomeIcon icon={faPlus} style={{ color: '#fff', fontSize: '16px' }}/>
-                             Registar Curso
+                             Registar Estágio
                           </button>
                         </Link>
                       </div>
@@ -101,4 +105,4 @@ function Curso() {
   );
 }
 
-export default Curso;
+export default Estagio;
