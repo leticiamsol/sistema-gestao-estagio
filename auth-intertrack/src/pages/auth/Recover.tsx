@@ -1,16 +1,16 @@
 import React, { FormEvent, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKey, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faKey, faLock } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../img/isla.png';
 
 const icons = {
   fontSize: 15,
   color: '#606060',
 }
 
-function Login() {
+function Recover() {
   
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
   async function handleLoginFormSubmit(event: FormEvent) {
 
@@ -18,7 +18,6 @@ function Login() {
 
     const data = {
         email,
-        password
     }
 
     const response = await fetch('http://127.0.0.1:3333/sessions', {
@@ -44,27 +43,29 @@ function Login() {
 
         <form onSubmit={handleLoginFormSubmit}>
 
-            <img src="/isla.png" className='isla_logo' alt="Isla Logo" />
+            <img src={logo} className='isla_logo' alt="Isla Logo" />
 
-            <label htmlFor="" className='text_label'>Fazer Login</label>
+            <label htmlFor="" className='recuperar_senha'>
+                <b>Esqueceu sua senha?</b> Sem problemas. Basta nos informar seu endereço de e-mail e enviaremos 
+                por e-mail um link de redefinição de senha que permitirá que você escolha uma nova.
+            </label>
           
             <input type="email" placeholder='Email' value={email} onChange={event => setEmail(event.target.value)} />
-            <input type="text" placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} />
-            <button type='submit'>Login</button>
+            <button type='submit'>Recuperar Senha</button>
 
             <ul className='auth_options'>
-                <a href="/recuperar_senha">
-                  <div className='auth_options_icons'>
-                    <FontAwesomeIcon style={icons} icon={faKey} />
-                    <a>Recuperar Senha</a>
-                  </div>
+                <a href="/">
+                    <div className='auth_options_icons'>
+                      <FontAwesomeIcon style={icons} icon={faKey} />
+                      <a>Login</a>
+                    </div>
                 </a>
 
                 <a href="/registar">
-                  <div className='auth_options_icons'>
-                    <FontAwesomeIcon style={icons} color='#606060' icon={faUserPlus} />
-                    <a>Registar</a>
-                  </div>
+                    <div className='auth_options_icons'>
+                      <FontAwesomeIcon style={icons} color='#606060' icon={faLock} />
+                      <a>Registar</a>
+                    </div>
                 </a>
             </ul>
           
@@ -76,4 +77,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Recover;

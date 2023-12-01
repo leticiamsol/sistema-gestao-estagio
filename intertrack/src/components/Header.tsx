@@ -16,21 +16,13 @@ function Header()
                         <div className="navbar-brand-box">
                             <a href="index.html" className="logo logo-dark">
                                 <span className="logo-sm">
-                                    <img src="/isla_logo.png" alt="logo-sm" height={22} />
+                                    <img src="/isla_icon.png" alt="logo-sm" height={22} />
                                 </span>
                                 <span className="logo-lg">
-                                    <img src="/isla_logo.png" alt="logo-dark" height={50} />
+                                    <img src="/isla.png" alt="logo-dark" height={35} />
                                 </span>
                             </a>
 
-                            <a href="index.html" className="logo logo-light">
-                                <span className="logo-sm">
-                                    <img src="/isla_logo.png" alt="logo-sm-light" height={22} />
-                                </span>
-                                <span className="logo-lg">
-                                    <img src="/isla_logo.png" alt="logo-light" height={50} />
-                                </span>
-                            </a>
                         </div>
 
                         <button type="button" className="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">

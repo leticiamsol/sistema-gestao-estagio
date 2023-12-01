@@ -27,3 +27,100 @@
     .custom-calendar {
         background-color: #f0f0f0; 
     }
+
+.fc-view-harness.fc-view-harness-active {
+    background-color: #ffffff;
+}
+
+/* Auth CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #EFF3F6;
+  }
+  
+  .auth_area {
+    max-width: 450px;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .auth_area form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    box-shadow: 1px 0 20px rgba(0,0,0,.05);
+    padding: 40px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  .auth_area input,
+  .auth_area button {
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+  
+  .auth_area input {
+    background-color: #EFF3F6;
+    box-shadow: 1px 0 20px rgba(0,0,0,.05);;
+  }
+  
+  .auth_area button {
+    background-color: #F32F52;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .isla_logo {
+    max-width: 170px;
+    display: block;
+    margin: 20px auto ;
+  }
+  
+  .auth_options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .auth_options a {
+    text-decoration: none;
+    color: #4f4f4f;
+  }
+  
+  .text_label {
+    text-align: center; 
+    font-size: 25px; 
+    color: #4f4f4f; 
+    font-weight: 600; 
+    margin: 15px;
+    display: none;
+  }
+  
+  .auth_options_icons {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+  }
+  
+  .recuperar_senha {
+    background-color: #f32f5318;
+    padding: 15px;
+    font-size: 14.5px;
+    border-radius: 5px;
+  }

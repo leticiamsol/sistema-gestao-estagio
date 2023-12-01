@@ -1,65 +1,85 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { FormEvent, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faKey, faLock } from '@fortawesome/free-solid-svg-icons';
 
-function Register() 
-{
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
-    const [confirmarSenha, setConfirmarSenha] = useState('');
-    const [error, setError] = useState('');
+const icons = {
+  fontSize: 15,
+  color: '#606060',
+}
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
+function Register() {
+  
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirm_password, setConfirmPassword] = useState('');
 
-        if (senha !== confirmarSenha) {
-        setError('As senhas não coincidem.');
-        return;
-        }
+  async function handleLoginFormSubmit(event: FormEvent) {
 
-        try {
-        const response = await axios.post('https://192.168.56.1:7092/api/Registration/registration', {
-            nome,
-            email,
-            senha,
-        });
+    event.preventDefault();
 
-        if (response.status === 200) {
-            console.log('Registro bem-sucedido!');
-        } else {
-            setError('Falha no registro. Tente novamente mais tarde.');
-        }
-        } catch (error) {
-        console.error('Erro durante o registro:', error);
-        setError('Erro durante o registro. Tente novamente mais tarde.');
-        }
-    };
-    
-    return (
-        <div className="main-content">
-          <div className="page-content">
-            <div className="container-fluid">
-              <form
-                style={{ display: 'flex', flexDirection: 'column', gap: 20, maxWidth: 600 }}
-                onSubmit={handleSubmit}
-              >
-                <input type="text" placeholder="nome" value={nome} onChange={(e) => setNome(e.target.value)} />
-                <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <input type="password" placeholder="senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
-                <input
-                    type="password"
-                    placeholder="confirmar senha"
-                    value={confirmarSenha}
-                    onChange={(e) => setConfirmarSenha(e.target.value)}
-                />
+    const data = {
+        name,
+        email,
+        password,
+        confirm_password
+    }
 
-                <input type="submit" value="registrar" />
-                {error && <div style={{ color: 'red' }}>{error}</div>}
-              </form>
-            </div>
-          </div>
-        </div>
-    );
+    const response = await fetch('http://127.0.0.1:3333/sessions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+    });
+
+    const responseJson = await response.json();
+
+    console.log(responseJson);
+
+    localStorage.setItem('token', responseJson.token);
+
+  }
+
+  return (
+    <div>
+
+      <div className='auth_area'>
+
+        <form onSubmit={handleLoginFormSubmit}>
+
+            <img src="/isla.png" className='isla_logo' alt="Isla Logo" />
+
+            <label htmlFor="" className='text_label'>Registar</label>
+          
+            <input type="email" placeholder='Your Name' value={name} onChange={event => setName(event.target.value)} />
+            <input type="email" placeholder='Email' value={email} onChange={event => setEmail(event.target.value)} />
+            <input type="text" placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} />
+            <input type="text" placeholder='Confirm Password' value={confirm_password} onChange={e => setConfirmPassword(e.target.value)} />
+            <button type='submit'>Registar</button>
+
+            <ul className='auth_options'>
+                <a href="/recuperar_senha">
+                  <div className='auth_options_icons'>
+                    <FontAwesomeIcon style={icons} icon={faKey} />
+                    <a>Recuperar Senha</a>
+                  </div>
+                </a>
+
+                <a href="/login">
+                  <div className='auth_options_icons'>
+                    <FontAwesomeIcon style={icons} color='#606060' icon={faLock} />
+                    <a>Login</a>
+                  </div>
+                </a>
+            </ul>
+          
+        </form>
+
+      </div>
+
+    </div>
+  );
 }
 
 export default Register;

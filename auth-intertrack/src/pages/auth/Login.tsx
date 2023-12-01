@@ -1,6 +1,7 @@
 import React, { FormEvent, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKey, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../img/isla.png';
 
 const icons = {
   fontSize: 15,
@@ -44,7 +45,7 @@ function Login() {
 
         <form onSubmit={handleLoginFormSubmit}>
 
-            <img src="/isla.png" className='isla_logo' alt="Isla Logo" />
+            <img src={logo} className='isla_logo' alt="Isla Logo" />
 
             <label htmlFor="" className='text_label'>Fazer Login</label>
           

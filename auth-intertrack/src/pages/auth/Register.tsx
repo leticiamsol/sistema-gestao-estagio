@@ -1,24 +1,29 @@
 import React, { FormEvent, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKey, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faKey, faLock } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../img/isla.png';
 
 const icons = {
   fontSize: 15,
   color: '#606060',
 }
 
-function Login() {
+function Register() {
   
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirm_password, setConfirmPassword] = useState('');
 
   async function handleLoginFormSubmit(event: FormEvent) {
 
     event.preventDefault();
 
     const data = {
+        name,
         email,
-        password
+        password,
+        confirm_password
     }
 
     const response = await fetch('http://127.0.0.1:3333/sessions', {
@@ -44,13 +49,15 @@ function Login() {
 
         <form onSubmit={handleLoginFormSubmit}>
 
-            <img src="/isla.png" className='isla_logo' alt="Isla Logo" />
+            <img src={logo} className='isla_logo' alt="Isla Logo" />
 
-            <label htmlFor="" className='text_label'>Fazer Login</label>
+            <label htmlFor="" className='text_label'>Registar</label>
           
+            <input type="email" placeholder='Your Name' value={name} onChange={event => setName(event.target.value)} />
             <input type="email" placeholder='Email' value={email} onChange={event => setEmail(event.target.value)} />
             <input type="text" placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} />
-            <button type='submit'>Login</button>
+            <input type="text" placeholder='Confirm Password' value={confirm_password} onChange={e => setConfirmPassword(e.target.value)} />
+            <button type='submit'>Registar</button>
 
             <ul className='auth_options'>
                 <a href="/recuperar_senha">
@@ -60,10 +67,10 @@ function Login() {
                   </div>
                 </a>
 
-                <a href="/registar">
+                <a href="/">
                   <div className='auth_options_icons'>
-                    <FontAwesomeIcon style={icons} color='#606060' icon={faUserPlus} />
-                    <a>Registar</a>
+                    <FontAwesomeIcon style={icons} color='#606060' icon={faLock} />
+                    <a>Login</a>
                   </div>
                 </a>
             </ul>
@@ -76,4 +83,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;

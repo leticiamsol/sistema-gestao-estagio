@@ -31,6 +31,7 @@ import ShowEstagio from './pages/estagios/ShowEstagio';
 import Calendario from './pages/calendar/Calendario';
 import Login from './auth/Login';
 import Register from './auth/Register';
+import Recover from './auth/Recover';
 
 import './App.css';
 import './css/Bootstrap.min.css';
@@ -87,7 +88,7 @@ function App() {
 
           <Route path='/login' element={<Login />}></Route>
           <Route path='/registar' element={<Register />}></Route>
-          {/* <Route path='/recuperar_senha' element={<RecuperarSenha />}></Route> */}
+          <Route path='/recuperar_senha' element={<Recover />}></Route>
 
       </Routes>
       
